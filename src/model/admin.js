@@ -25,11 +25,6 @@ const adminSchema = mongoose.Schema({
     trim: true,
     required: true,
     minLength: 6,
-    validate(value) {
-      let strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])")
-      if (!strongPass.test(value))
-        throw new Error("Paasword must contain at least one capital/small letter & specail charcater and number")
-    }
   },
   tokens: [{
     type: String,
