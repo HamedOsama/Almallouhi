@@ -3,10 +3,12 @@ const Home = require('../model/home');
 
 const Admin = require('../model/admin')
 const Contacts = require('../model/contacts')
-const Slider = require('../model/slider')
 const multer = require('multer')
 const path = require('path')
-const sendToken = require('../middleware/jwtToken')
+const sendToken = require('../middleware/jwtToken');
+const AboutUs = require('../model/aboutUs');
+const OurMessage = require('../model/ourMessage');
+const Images = require('../model/images');
 const Uploads = multer({
   limits: {
     fileSize: 1000000
@@ -109,101 +111,24 @@ const updateProfile = async (req, res, next) => {
 const getHome = factory.getOne(Home);
 const updateHome = factory.updateOne(Home);
 
+// about us
+const getAboutUs = factory.getOne(AboutUs);
+const updateAboutUs = factory.updateOne(AboutUs);
+
+// our message
+const getOurMessage = factory.getOne(OurMessage);
+const updateOurMessage = factory.updateOne(OurMessage);
+
+// images
+const addImage = factory.createOne(Images);
+const updateImage = factory.updateOne(Images);
+const deleteImage = factory.deleteOne(Images);
+const getAllImages = factory.getAll(Images);
 
 
-
-
-//slider
-const addSlider = async (req, res, next) => {
-  try {
-    const slider = new Slider(req.body)
-    if (req.file)
-      slider.image = req.file.filename
-    await slider.save()
-    res.status(201).json({
-      ok: true,
-      status: 201,
-      message: 'succeeded',
-      body: slider
-    })
-  }
-  catch (e) {
-    next(e)
-  }
-}
-const updateSlider = async (req, res, next) => {
-  try {
-    const sliderId = req.params.id
-    const slider = await Slider.findByIdAndUpdate({ _id: sliderId }, req.body, {
-      new: true,
-      runValidators: true
-    })
-    if (!slider) {
-      return res.status(404).send('not found')
-    }
-    if (req.file)
-      slider.image = req.file.filename
-    await slider.save()
-    res.status(200).json({
-      ok: true,
-      status: 200,
-      message: 'succeeded',
-      body: slider
-    })
-  }
-  catch (e) {
-    next(e);
-  }
-}
-const getAllSliders = async (req, res, next) => {
-  try {
-    const sliders = await Slider.find({})
-    res.status(200).json({
-      ok: true,
-      status: 200,
-      message: 'succeeded',
-      body: sliders
-    })
-  }
-  catch (e) {
-    next(e);
-  }
-}
-const deleteSlider = async (req, res, next) => {
-  try {
-    const sliderId = req.params.id
-    const slider = await Slider.findByIdAndDelete({ _id: sliderId })
-    if (!slider) {
-      return res.status(404).send('not found')
-    }
-    res.status(200).json({
-      ok: true,
-      status: 200,
-      message: 'succeeded',
-    })
-  }
-  catch (e) {
-    next(e);
-  }
-}
 // admin
 
 //contacts
-const addContact = async (req, res, next) => {
-  try {
-    const contact = new Contacts(req.body)
-    await contact.save()
-    res.status(201).json({
-      ok: true,
-      status: 201,
-      message: 'succeeded',
-      body: contact
-    })
-  }
-  catch (e) {
-    next(e)
-  }
-}
 const getContacts = async (req, res, next) => {
   try {
     const contact = await Contacts.findOne({})
@@ -245,13 +170,9 @@ const updateContact = async (req, res, next) => {
 
 
 module.exports = {
-  addSlider,
-  updateSlider,
-  getAllSliders,
-  deleteSlider,
-  addContact,
   getContacts,
   updateContact,
+
   signUp,
   login,
   logout,
@@ -260,4 +181,12 @@ module.exports = {
 
   getHome,
   updateHome,
+  getAboutUs,
+  updateAboutUs,
+  getOurMessage,
+  updateOurMessage,
+  getAllImages,
+  addImage,
+  updateImage,
+  deleteImage,
 }

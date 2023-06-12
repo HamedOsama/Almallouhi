@@ -1,10 +1,7 @@
 const multer = require("multer")
 const path = require("path")
 
-const uploadImage = multer({
-  limits: {
-    fileSize: 1000000
-  },
+exports.uploadImage = multer({
   fileFilter(req, file, cb) {
     if (!file.originalname.match(/\.(jpg|jpeg|png|jfif)$/))
       return cb(new Error('please upload image !'))
@@ -16,12 +13,23 @@ const uploadImage = multer({
       cb(null, fullPath)
     },
     filename: (req, file, cb) => {
-      console.log(req.body);
       const fileName = Date.now().toString() + "_" + file.originalname
       cb(null, fileName)
     }
   }),
 })
-
-
-module.exports = uploadImage
+exports.uploadImageController = async (req, res, next) => {
+  if (req.file)
+    res.status(201).json({
+      ok: true,
+      code: 201,
+      message: "Image uploaded successfully",
+      filename: req.file.filename
+    });
+  else
+    res.status(400).json({
+      ok: false,
+      code: 400,
+      message: "No image uploaded"
+    });
+}

@@ -19,18 +19,30 @@ router.route('/home')
 router.route('/home/:id')
   .patch(auth, adminController.updateHome)
 
-//slider
-router.route('/slider')
-  .get(auth, adminController.getAllSliders)
-  .post(auth, uploadImage.single('image'), adminController.addSlider)
-router.route('/slider/:id')
-  .patch(auth, uploadImage.single('image'), adminController.updateSlider)
-  .delete(auth, adminController.deleteSlider)
+//about us
+router.route('/about-us')
+  .get(auth, adminController.getAboutUs)
+router.route('/about-us/:id')
+  .patch(auth, adminController.updateAboutUs)
+
+//our message
+router.route('/our-message')
+  .get(auth, adminController.getOurMessage)
+router.route('/our-message/:id')
+  .patch(auth, adminController.updateOurMessage)
+
+//images
+router.route('/images')
+  .get(auth, adminController.getAllImages)
+  .post(auth, adminController.addImage)
+router.route('/images/:id')
+  .patch(auth, adminController.updateImage)
+  .delete(auth, adminController.deleteImage)
+
 
 // contacts 
 router.route('/contacts')
   .get(auth, adminController.getContacts)
-  .post(auth, adminController.addContact)
 router.route('/contacts/:id')
   .patch(auth, adminController.updateContact)
 

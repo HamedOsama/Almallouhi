@@ -15,5 +15,5 @@ const getAllContacts = async (req, res, next) => {
   }
 }
 module.exports = {
-  getAllContacts
+  getAllContacts,
 }

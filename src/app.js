@@ -21,8 +21,6 @@ app.use(morgan('dev'))
 app.use(cors({ credentials: true, origin: ['http://localhost:3000' , 'https://admin.tawyanoffice.com' , 'https://tawyanoffice.com' , 'https://www.tawyanoffice.com'] }));
 
 app.use('/images', express.static(path.join(__dirname, "./images")))
-app.use('/resumes', express.static(path.join(__dirname, "./resume")))
-
 
 // homepage
 app.get('/', (req, res) => {
