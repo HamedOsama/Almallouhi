@@ -4,62 +4,134 @@ const homeSchema = new mongoose.Schema({
   boxes: {
     box1: {
       title: {
-        type: String,
-        required: true,
-        default: 'title'
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'title'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'العنوان'
+        }
       },
       description: {
-        type: String,
-        required: true,
-        default: 'description'
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'description'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'الوصف'
+        }
       },
     },
     box2: {
       title: {
-        type: String,
-        required: true,
-        default: 'title'
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'title'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'العنوان'
+        }
       },
       description: {
-        type: String,
-        required: true,
-        default: 'description'
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'description'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'الوصف'
+        }
       },
     },
     box3: {
       title: {
-        type: String,
-        required: true,
-        default: 'title'
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'title'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'العنوان'
+        }
       },
       description: {
-        type: String,
-        required: true,
-        default: 'description'
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'description'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'الوصف'
+        }
       },
     },
   },
   products: [
     {
       title: {
-        type: String,
-        required: true,
-        default: 'title'
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'title'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'العنوان'
+        }
       },
       image: {
         type: String,
         required: true,
-        default: 'image'
+        default: 'https://via.placeholder.com/150.jpg'
       },
     }
   ],
   news: [
     {
       description: {
-        type: String,
-        required: true,
-        default: 'description'
-      }
+        en: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'description'
+        },
+        ar: {
+          type: String,
+          trim: true,
+          required: true,
+          default: 'الوصف'
+        }
+      },
     }
   ]
 })
