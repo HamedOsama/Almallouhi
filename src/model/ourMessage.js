@@ -2,14 +2,32 @@ const mongoose = require('mongoose');
 
 const ourMessageSchema = mongoose.Schema({
   title: {
-    type: String,
-    required: true,
-    default: 'Our Message'
+    en: {
+      type: String,
+      trim: true,
+      required: true,
+      default: 'Our Message'
+    },
+    ar: {
+      type: String,
+      trim: true,
+      required: true,
+      default: 'رسالتنا'
+    }
   },
   description: {
-    type: String,
-    required: true,
-    default: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.'
+    en: {
+      type: String,
+      trim: true,
+      required: true,
+      default: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.'
+    },
+    ar: {
+      type: String,
+      trim: true,
+      required: true,
+      default: 'لوريم ايبسوم دولار سيت اميت'
+    }
   },
   image: {
     type: String,
