@@ -2,18 +2,16 @@ const mongoose = require('mongoose');
 
 const aboutUsSchema = mongoose.Schema({
   images: [{
-    type: String,
-    required: true
-  }],
-  slider: [{
-    en: {
+    one:
+    {
       type: String,
       required: true
     },
-    ar: {
+    two:
+    {
       type: String,
       required: true
-    }
+    },
   }],
 })
 
