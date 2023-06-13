@@ -5,12 +5,14 @@ const aboutUsSchema = mongoose.Schema({
     one:
     {
       type: String,
-      required: true
+      required: true,
+      default : 'https://zjunior.com/images/logo.png'
     },
     two:
     {
       type: String,
-      required: true
+      required: true,
+      default : 'https://zjunior.com/images/logo.png'
     },
   }],
 })
