@@ -1,10 +1,24 @@
 const mongoose = require('mongoose');
 
 const imagesSchema = mongoose.Schema({
-  image: {
-    type: String,
-    required: true
-  },
+  images : {
+    one:{
+      type: String,
+      required: true,
+    },
+    two:{
+      type: String,
+      required: true,
+    },
+    three:{
+      type: String,
+      required: true,
+    },
+    four:{
+      type: String,
+      required: true,
+    },
+  }
 })
 
 const Images = mongoose.model('images', imagesSchema);
