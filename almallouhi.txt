@@ -1,0 +1,40 @@
+domain => https://almallouhi.onrender.com
+
+user
+domain/images/اسم الصورة
+
+localhost:5000/api/v1/home (get)
+domain/api/v1/about-us (get)
+domain/api/v1/our-message (get)
+domain/api/v1/images (get)
+domain/api/v1/contacts (get)
+
+______________________________
+admin
+
+"email" : "admin@admin.com",
+"password" : "Boda1234!"
+
+domain/api/v1/admin/login (post)
+
+
+domain/api/v1/admin/home (get)
+domain/api/v1/admin/home/:id (patch)
+
+domain/api/v1/admin/about-us (get)
+domain/api/v1/admin/about-us/:id (patch)
+
+domain/api/v1/admin/our-message (get)
+domain/api/v1/admin/our-message/:id (patch)
+
+domain/api/v1/admin/images (get)
+domain/api/v1/admin/images (post)
+domain/api/v1/admin/images/:id (patch)
+domain/api/v1/admin/images/:id (delete)
+
+domain/api/v1/admin/contacts (get)
+domain/api/v1/admin/contacts/:id (patch)
+
+domain/api/v1/upload 
+(file)
+ده اسم اللي ترفعة

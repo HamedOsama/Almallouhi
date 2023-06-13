@@ -6,8 +6,14 @@ const aboutUsSchema = mongoose.Schema({
     required: true
   }],
   slider: [{
-    type: String,
-    required: true
+    en: {
+      type: String,
+      required: true
+    },
+    ar: {
+      type: String,
+      required: true
+    }
   }],
 })
 

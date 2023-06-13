@@ -22,16 +22,23 @@ const contactSchema = mongoose.Schema({
         required: true,
     },
     address: {
-        type: String,
-        trim: true,
-        required: true,
+        en: {
+            type: String,
+            trim: true,
+            required: true
+        },
+        ar: {
+            type: String,
+            trim: true,
+            required: true
+        }
     },
     shortAddress: {
         type: String,
         trim: true,
-        required: true,
+        required: true
     },
-    postalCode:{
+    postalCode: {
         type: String,
         trim: true,
         required: true,
