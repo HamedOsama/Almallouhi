@@ -42,7 +42,22 @@ const contactSchema = mongoose.Schema({
         type: String,
         trim: true,
         required: true,
-    }
+    },
+    facebook : {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    twitter : {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    instagram : {
+        type: String,
+        trim: true,
+        required: true,
+    },
 })
 const Contact = mongoose.model('contact', contactSchema)
 module.exports = Contact
