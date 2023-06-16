@@ -46,4 +46,8 @@ router.route('/contacts')
 router.route('/contacts/:id')
   .patch(auth, adminController.updateContact)
 
+//contact us
+router.route('/contact-us')
+  .get(auth, adminController.getContactUs)
+
 module.exports = router;

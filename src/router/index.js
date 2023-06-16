@@ -12,4 +12,5 @@ router.use('/about-us', require('./api/aboutUs.routes'));
 router.use('/our-message', require('./api/ourMessage.routes'));
 router.use('/images', require('./api/images.routes'));
 router.use('/upload', require('./api/upload.routes'));
+router.use('/contact-us', require('./api/contactUs.routes'));
 module.exports = router;

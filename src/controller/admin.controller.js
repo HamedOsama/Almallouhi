@@ -9,6 +9,7 @@ const sendToken = require('../middleware/jwtToken');
 const AboutUs = require('../model/aboutUs');
 const OurMessage = require('../model/ourMessage');
 const Images = require('../model/images');
+const ContactUs = require('../model/contactUs');
 const Uploads = multer({
   limits: {
     fileSize: 1000000
@@ -167,6 +168,8 @@ const updateContact = async (req, res, next) => {
   }
 }
 
+// contact us
+const getContactUs = factory.getAll(ContactUs);
 
 
 module.exports = {
@@ -178,7 +181,7 @@ module.exports = {
   logout,
   auth,
   updateProfile,
-
+  getContactUs,
   getHome,
   updateHome,
   getAboutUs,
