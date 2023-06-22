@@ -18,7 +18,11 @@ app.use(cookieParser());
 app.use(morgan('dev'))
 
 // cors
-app.use(cors());
+app.use(cors(
+  {
+    origin: ['https://almallouhi.sa', 'https://dashboard.almallouhi.sa'],
+  }
+));
 
 app.use('/images', express.static(path.join(__dirname, "./images")))
 
