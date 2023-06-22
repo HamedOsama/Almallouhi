@@ -20,7 +20,7 @@ app.use(morgan('dev'))
 // cors
 app.use(cors(
   {
-    origin: ['https://almallouhi.sa', 'https://dashboard.almallouhi.sa'],
+    origin: ['https://www.almallouhi.sa', 'https://almallouhi.sa', 'https://dashboard.almallouhi.sa', 'https://elmlouhii-panel.vercel.app'],
   }
 ));
 
