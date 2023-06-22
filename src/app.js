@@ -18,11 +18,7 @@ app.use(cookieParser());
 app.use(morgan('dev'))
 
 // cors
-app.use(cors(
-  {
-    origin: ['https://www.almallouhi.sa', 'https://almallouhi.sa', 'https://dashboard.almallouhi.sa', 'https://elmlouhii-panel.vercel.app'],
-  }
-));
+app.use(cors());
 
 app.use('/images', express.static(path.join(__dirname, "./images")))
 
